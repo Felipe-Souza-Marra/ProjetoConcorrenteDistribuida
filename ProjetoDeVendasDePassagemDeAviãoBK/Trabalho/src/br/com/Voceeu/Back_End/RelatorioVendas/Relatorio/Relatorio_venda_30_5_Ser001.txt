@@ -1,0 +1,32 @@
+++++++++++++++Relatorio de venda++++++++++++++
+//Nome do Servidor: Ser001
+//Valor total das vendas: R$4000,00
+//Numeros de voos: 3
+//Numeros de vendas: 1
+++++++++++++++Fim do Relatorio++++++++++++++
+
+
+++++++++++++++Hitorio Passagem++++++++++++++
+//Nome do Passageiro: Carlos
+//CPF do Passageiro: 1222222222
+//Numero de passagem: 2
+
+++++++++++++++Pasagens++++++++++++++
+------------------------------------
+//Nome do Vou: Bog002
+//Saida: Brasilha-DF
+//Chegada: Portugal
+//Data e hora do voou: 15/5
+//Horario: 18.0
+//Valor da pasagem: R$2000,00
+//Acento: E01
+------------------------------------
+//Nome do Vou: Bog003
+//Saida: Brasilha-DF
+//Chegada: Portugal
+//Data e hora do voou: 15/5
+//Horario: 15.0
+//Valor da pasagem: R$2000,00
+//Acento: E01
+------------------------------------
+++++++++++++++Fim do Hitorioco++++++++++++++

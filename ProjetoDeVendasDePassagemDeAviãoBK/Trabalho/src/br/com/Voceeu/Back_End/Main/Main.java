@@ -1,0 +1,78 @@
+package br.com.Voceeu.Back_End.Main;
+
+import java.util.ArrayList;
+
+import br.com.Voceeu.Back_End.Acentos.Aviao;
+import br.com.Voceeu.Back_End.CadastroPessoa.Passageiro;
+import br.com.Voceeu.Back_End.CadastroPessoa.adim;
+import br.com.Voceeu.Back_End.Compra.DiaHorario;
+import br.com.Voceeu.Back_End.Compra.Valor;
+import br.com.Voceeu.Back_End.Pasagem.Pasagem;
+import br.com.Voceeu.Back_End.RelatorioVendas.RelatorioVendas;
+import br.com.Voceeu.Back_End.Servidor.Servidor;
+
+public class Main {
+    public static void main(String[] args) throws Exception {//Mayco: nao sei se a meins vai ficar aqui mais caso nao fique nao tira ela daqui pode ser usada para testar
+        // teste
+        
+        ArrayList<Aviao> aviaos = new ArrayList<Aviao>();
+        ArrayList<Passageiro> passageiros = new ArrayList<Passageiro>();
+        DiaHorario data = new DiaHorario();
+        DiaHorario data1 = new DiaHorario();
+        DiaHorario data2 = new DiaHorario();
+        Valor valor = new Valor();
+        valor.setValor(2000);
+        data.setDia(15);
+        data.setHora(15);
+        data.setMes(5);
+        Aviao av1 = new Aviao("Bog001", data, valor, "Brasilha-DF", "Portugal");
+        aviaos.add(av1);
+        data1.setDia(15);
+        data1.setHora(18);
+        data1.setMes(5);
+        Aviao av2 = new Aviao("Bog002", data1, valor, "Brasilha-DF", "Portugal");
+        aviaos.add(av2);
+        data2.setDia(15);
+        data2.setHora(15);
+        data2.setMes(5);
+        Aviao av3 = new Aviao("Bog003", data2, valor,"Brasilha-DF", "Portugal");
+        aviaos.add(av3);
+
+        adim adim = new adim();
+        adim.setCpf("100000000");
+        adim.setNivelAcesso(0);
+        adim.setNome("Roberto");
+        adim.setSenha("0000");
+        
+        Passageiro p1 = new Passageiro();
+        p1.setNivelAcesso(1);
+        p1.setCpf("1222222222");
+        p1.setEmail("carlos@gamil.com");
+        p1.setNome("Carlos");
+        p1.setSenha("0000");
+
+        Valor valorTotal = new Valor();
+        valorTotal.setValor(0);
+        Pasagem psg = new Pasagem(p1, aviaos.get(1), aviaos.get(1).ocuparAcento("E1"));
+        valorTotal.somaValores(valor.getValor());
+        p1.addPasagem(psg);
+        Pasagem psg2 = new Pasagem(p1, aviaos.get(2), aviaos.get(2).ocuparAcento("E1"));
+        valorTotal.somaValores(valor.getValor());
+        p1.addPasagem(psg2);
+        passageiros.add(p1);
+
+        Servidor s = new Servidor();
+        s.setNome("Ser001");
+        RelatorioVendas r = new RelatorioVendas();
+
+        java.io.File  a = r.CriaçãoArquivo(30, 5, s);
+    
+        r.escritaRelatorio(a, aviaos.size(), 1, s , passageiros, valorTotal.getValor());
+
+        
+        
+
+
+
+    }
+}
