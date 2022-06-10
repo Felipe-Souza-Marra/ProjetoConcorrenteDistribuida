@@ -23,21 +23,27 @@ public class Aviao {
         this.setNomeAviao(nomeAviao);
         this.saida = saida;
         this.chegada = chegada;
-
+        int i;
+        
         //nomeção do acentos a adecionar ao avião 
-        for(int i=0; i < 20; i++){
-            if(i+1 <= 10){//os primeiro 10 acneto e da esqueda(E) os outos 10 e da diretita(D)
-                Acentos acento = new Acentos();
-                acento.setNomeAcentos("E"+ i+1);
-                acento.setVago(true);
-                acentos.add(acento);
+        for(i=0; i < 20;i++){
+            if(i <= 10){//os primeiro 10 acneto e da esqueda(E) os outos 10 e da diretita(D)
+                Acentos acentoE = new Acentos();
+                acentoE.setNomeAcentos("E"+ (i+1));
+                acentoE.setVago(true);
+                acentos.add(acentoE);
+                
             }else{
-                Acentos acento = new Acentos();
-                acento.setNomeAcentos("D"+ i+1);
-                acento.setVago(true);
-                acentos.add(acento);
+                Acentos acentoD = new Acentos();
+                acentoD.setNomeAcentos("D"+ (i+1));
+                acentoD.setVago(true);
+                acentos.add(acentoD);
             }
+            
         }
+        Acentos acentoN = new Acentos();
+        acentoN.setNomeAcentos("NULO");
+        acentos.add(acentoN);  
     }
 
     public String getChegada() {
@@ -66,16 +72,27 @@ public class Aviao {
 
     //para oupar o acento e retonar o acento para a Casse Pasagem
     public Acentos ocuparAcento(String nomeAcento){
-        int vetorPossicao = 0;
+        Acentos selecionado = new Acentos();
         for(Acentos as : acentos){
-            if(as.getNomeAcentos() == nomeAcento){
+            
+            if(as.getNomeAcentos().compareTo(nomeAcento) == 0  && as.getVago() == false){
+                //acento ocupado
+                acentos.get(20);
+            }else if(as.getNomeAcentos().compareTo(nomeAcento) == 0){
                 as.setVago(false);
-                vetorPossicao++;
+                selecionado = as;
                 this.lotacao--;
                 break;
+            
+            }else if(as.getNomeAcentos() != nomeAcento){
+                acentos.get(20);
             }
+            
+           
         }
-        return acentos.get(vetorPossicao);
+        
+        
+        return selecionado;
     }
 
     public String getNomeAviao() {

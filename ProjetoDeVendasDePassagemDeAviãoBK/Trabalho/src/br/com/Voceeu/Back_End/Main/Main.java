@@ -25,16 +25,19 @@ public class Main {
         data.setDia(15);
         data.setHora(15);
         data.setMes(5);
+        //System.out.println("Bog001");
         Aviao av1 = new Aviao("Bog001", data, valor, "Brasilha-DF", "Portugal");
         aviaos.add(av1);
         data1.setDia(15);
         data1.setHora(18);
         data1.setMes(5);
+        //System.out.println("Bog002");
         Aviao av2 = new Aviao("Bog002", data1, valor, "Brasilha-DF", "Portugal");
         aviaos.add(av2);
         data2.setDia(15);
         data2.setHora(15);
         data2.setMes(5);
+        //System.out.println("Bog003");
         Aviao av3 = new Aviao("Bog003", data2, valor,"Brasilha-DF", "Portugal");
         aviaos.add(av3);
 
@@ -56,7 +59,7 @@ public class Main {
         Pasagem psg = new Pasagem(p1, aviaos.get(1), aviaos.get(1).ocuparAcento("E1"));
         valorTotal.somaValores(valor.getValor());
         p1.addPasagem(psg);
-        Pasagem psg2 = new Pasagem(p1, aviaos.get(2), aviaos.get(2).ocuparAcento("E1"));
+        Pasagem psg2 = new Pasagem(p1, aviaos.get(2), aviaos.get(2).ocuparAcento("D11"));
         valorTotal.somaValores(valor.getValor());
         p1.addPasagem(psg2);
         passageiros.add(p1);
