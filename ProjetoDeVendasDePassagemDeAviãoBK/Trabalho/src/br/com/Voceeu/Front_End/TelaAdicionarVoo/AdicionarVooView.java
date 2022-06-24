@@ -6,6 +6,17 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.Box;
+import java.awt.geom.Ellipse2D;
+import java.awt.Color;
+import java.awt.Panel;
+import java.awt.Shape;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+import br.com.Voceeu.Components.Cabecalho;
+
+import java.awt.Canvas;
 
 public class AdicionarVooView {
 
@@ -15,7 +26,8 @@ public class AdicionarVooView {
 	private JTextField chegadaTextField; //Gustavo - Área pra escrever o local de chegada
 	private JTextField dataTextField; //Gustavo - Área pra escrever a data do voo
 	private JTextField precoTextField; //Gustavo - Área pra escrever o valor da passagem
-
+	private Cabecalho cabecalho;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -79,10 +91,6 @@ public class AdicionarVooView {
 		precoTextField.setBounds(16, 172, 226, 26);
 		frame.getContentPane().add(precoTextField);
 		
-		JLabel logo = new JLabel("Logo");
-		logo.setBounds(6, 6, 43, 43);
-		frame.getContentPane().add(logo);
-		
 		JButton botaoCancelar = new JButton("Cancelar");
 		botaoCancelar.setBounds(6, 237, 117, 29);
 		frame.getContentPane().add(botaoCancelar);
@@ -90,6 +98,7 @@ public class AdicionarVooView {
 		JButton botaoAdicionar = new JButton("Adicionar");
 		botaoAdicionar.setBounds(327, 237, 117, 29);
 		frame.getContentPane().add(botaoAdicionar);
+		
+		this.cabecalho = new Cabecalho(this.frame);
 	}
-
 }

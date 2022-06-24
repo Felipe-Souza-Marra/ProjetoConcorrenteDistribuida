@@ -1,15 +1,18 @@
 package br.com.Voceeu.Front_End.TelaMenu;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import br.com.Voceeu.Components.Cabecalho;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 public class MenuView_Admin {
 
 	private JFrame frame;
+	private Cabecalho cabecalho;
 
 	/**
 	 * Launch the application.
@@ -43,10 +46,6 @@ public class MenuView_Admin {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel logo = new JLabel("Logo");
-		logo.setBounds(6, 6, 43, 43);
-		frame.getContentPane().add(logo);
-		
 		JButton botaoAdicionarVoo = new JButton("Adicionar Voo"); 
 		botaoAdicionarVoo.setBounds(159, 78, 117, 29);
 		frame.getContentPane().add(botaoAdicionarVoo);
@@ -62,5 +61,7 @@ public class MenuView_Admin {
 		JButton botaoVoltar = new JButton("Voltar"); 
 		botaoVoltar.setBounds(159, 237, 117, 29);
 		frame.getContentPane().add(botaoVoltar);
+		
+		this.cabecalho = new Cabecalho(this.frame);
 	}
 }

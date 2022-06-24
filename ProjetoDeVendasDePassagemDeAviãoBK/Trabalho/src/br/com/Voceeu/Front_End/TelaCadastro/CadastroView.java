@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.SwingConstants;
+
+import br.com.Voceeu.Components.Cabecalho;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
@@ -17,7 +20,8 @@ public class CadastroView {
 	private JFrame frmVoceEEu;
 	private JTextField emailTextField; //Gustavo - Área pra escrever o email do login
 	private JTextField senhaTextField; //Gustavo - Área pra escrever a senha do login
-
+	private Cabecalho cabecalho;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -81,8 +85,6 @@ public class CadastroView {
 		botaoSemLogin.setBounds(142, 209, 175, 29);
 		frmVoceEEu.getContentPane().add(botaoSemLogin);
 		
-		JLabel logo = new JLabel("Logo");
-		logo.setBounds(6, 6, 43, 43);
-		frmVoceEEu.getContentPane().add(logo);
+		this.cabecalho = new Cabecalho(this.frmVoceEEu);
 	}
 }

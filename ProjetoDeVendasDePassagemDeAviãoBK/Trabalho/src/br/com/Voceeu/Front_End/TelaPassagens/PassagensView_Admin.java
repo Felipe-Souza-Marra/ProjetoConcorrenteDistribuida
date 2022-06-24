@@ -5,11 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+
+import br.com.Voceeu.Components.Cabecalho;
+
 import javax.swing.JButton;
 
 public class PassagensView_Admin {
 
 	private JFrame frame;
+	private Cabecalho cabecalho;
 
 	/**
 	 * Launch the application.
@@ -43,10 +47,6 @@ public class PassagensView_Admin {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel logo = new JLabel("Logo");
-		logo.setBounds(6, 6, 43, 43);
-		frame.getContentPane().add(logo);
-		
 		JList passagensLista = new JList(); //Gustavo - Lista para vizulisar o relatorio de passagens
 		passagensLista.setBounds(16, 61, 428, 161);
 		frame.getContentPane().add(passagensLista);
@@ -54,6 +54,8 @@ public class PassagensView_Admin {
 		JButton botaoVoltar = new JButton("Voltar");
 		botaoVoltar.setBounds(161, 237, 117, 29);
 		frame.getContentPane().add(botaoVoltar);
+		
+		this.cabecalho = new Cabecalho(this.frame);
 	}
 
 }
