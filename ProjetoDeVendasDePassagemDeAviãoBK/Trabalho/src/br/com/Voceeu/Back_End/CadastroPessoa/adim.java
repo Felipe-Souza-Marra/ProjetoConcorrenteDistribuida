@@ -1,6 +1,14 @@
 package br.com.Voceeu.Back_End.CadastroPessoa;
 
 public class adim extends Pessoa{//calsse filha da pessoa, essa classe para que ele tenha acesso ao servidor ao relatorio
+    private int matricula = 00001;
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
 
     @Override
     public String getCpf() {

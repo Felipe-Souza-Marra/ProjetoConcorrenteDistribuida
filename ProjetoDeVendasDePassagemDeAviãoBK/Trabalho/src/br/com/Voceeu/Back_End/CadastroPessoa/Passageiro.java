@@ -8,6 +8,14 @@ public class Passageiro extends Pessoa{ //calsse filha da pessoa, essa classe cl
     private ArrayList<Passagem> pasagens = new ArrayList<Passagem>();
     private int matricula = 0;
 
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
     public void addPasagem(Passagem p){
         this.pasagens.add(p);
     }

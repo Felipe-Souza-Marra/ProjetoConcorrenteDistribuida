@@ -7,7 +7,11 @@ import br.com.Voceeu.Back_End.CadastroPessoa.Passageiro;
 public class Passagem {
     private Passageiro passageiro;
     private Aviao aviao;
-    private String Acento;    
+    private String Acento;
+    private int cogodigoPasagem;
+    
+    
+
     //pasagem sera criado so quando ele for compra uma assim no final da compra p sistema passara todas as inforção para criaçao da passagem
     public Passagem(Passageiro passageiro, Aviao aviao , Assentos acento){
         this.setPassageiro(passageiro);
@@ -15,6 +19,14 @@ public class Passagem {
         this.setAcento(acento.getNomeAcentos());
     }
 
+    public int getCogodigoPasagem() {
+        return cogodigoPasagem;
+    }
+
+    public void setCogodigoPasagem(int cogodigoPasagem) {
+        this.cogodigoPasagem = cogodigoPasagem;
+    }
+    
     public Passageiro getPassageiro() {
         return passageiro;
     }
