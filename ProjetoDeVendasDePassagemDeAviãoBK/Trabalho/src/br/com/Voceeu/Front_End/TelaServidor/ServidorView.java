@@ -45,29 +45,29 @@ public class ServidorView {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(0, 0, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JList listaPassagens = new JList(); //Gustavo - Lista de passagens no servidor
-		listaPassagens.setBounds(17, 61, 427, 85);
-		frame.getContentPane().add(listaPassagens);
+		JList listPassagens = new JList(); //Gustavo - Lista de passagens no servidor
+		listPassagens.setBounds(frame.getBounds().x + 25, (int) (frame.getBounds().y + ((frame.getSize().height - 200) * 0.2)), (frame.getSize().width - 50), (frame.getSize().height - 200));
+		frame.getContentPane().add(listPassagens);
+		
+		JLabel buscarPassagem = new JLabel("Buscar passagem");
+		buscarPassagem.setBounds(listPassagens.getBounds().x, listPassagens.getBounds().y + listPassagens.getSize().height + 10, 113, 26);
+		frame.getContentPane().add(buscarPassagem);
 		
 		passagemTextField = new JTextField();
-		passagemTextField.setBounds(142, 176, 150, 26);
+		passagemTextField.setBounds(buscarPassagem.getBounds().x + buscarPassagem.getSize().width + 10, buscarPassagem.getBounds().y, 150, 26);
 		frame.getContentPane().add(passagemTextField);
 		passagemTextField.setColumns(10);
 		
-		JLabel buscarPassgem = new JLabel("Buscar passagem");
-		buscarPassgem.setBounds(17, 181, 113, 16);
-		frame.getContentPane().add(buscarPassgem);
-		
-		JButton botaoVoltar = new JButton("Voltar");
-		botaoVoltar.setBounds(6, 237, 117, 29);
-		frame.getContentPane().add(botaoVoltar);
+		JButton botaoCancelar = new JButton("Cancelar");
+		botaoCancelar.setBounds((int) frame.getBounds().getMinX(), (int) frame.getBounds().getMaxY() - 58, 117, 29);
+		frame.getContentPane().add(botaoCancelar);
 		
 		JButton botaoContinuar = new JButton("Continuar");
-		botaoContinuar.setBounds(327, 237, 117, 29);
+		botaoContinuar.setBounds((int) frame.getBounds().getMaxX() - 117, (int) frame.getBounds().getMaxY() - 58, 117, 29);
 		frame.getContentPane().add(botaoContinuar);
 		
 		this.cabecalho = new Cabecalho(this.frame);

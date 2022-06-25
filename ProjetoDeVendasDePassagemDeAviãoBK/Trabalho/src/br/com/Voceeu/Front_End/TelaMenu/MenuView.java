@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import br.com.Voceeu.Components.Cabecalho;
 
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
 
 public class MenuView {
 
@@ -47,38 +48,39 @@ public class MenuView {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(0, 0, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JList listaAssentosLivres = new JList(); //Gustavo - Lista para vizualisar os assentos livres
-		listaAssentosLivres.setBounds(112, 57, 227, 32);
+		listaAssentosLivres.setBounds((int) ((frame.getBounds().width * 0.5) - ((frame.getSize().width - 60) * 0.5)), (int) (frame.getSize().height * 0.125), frame.getSize().width - 60, 32);
 		frame.getContentPane().add(listaAssentosLivres);
 		
 		tabelaAssentosLivres = new JTable(); 
-		tabelaAssentosLivres.setBounds(112, 101, 227, 32);
+		tabelaAssentosLivres.setBounds(listaAssentosLivres.getBounds().x, (int) (listaAssentosLivres.getBounds().y + (listaAssentosLivres.getSize().height * 1.5)), listaAssentosLivres.getSize().width, listaAssentosLivres.getSize().height * 2);
 		frame.getContentPane().add(tabelaAssentosLivres);
 		
-		JLabel assentosImage = new JLabel("imagemAssentos");
-		assentosImage.setBounds(112, 145, 227, 43);
+		JLabel assentosImage = new JLabel("imagemAssentos"); //Gustavo - Imagem para ilustracao (ainda não exportei)
+		assentosImage.setHorizontalAlignment(SwingConstants.CENTER);
+		assentosImage.setBounds((int) (tabelaAssentosLivres.getBounds().getMinX()), (int) (tabelaAssentosLivres.getBounds().y + (tabelaAssentosLivres.getSize().height * 1.5)), tabelaAssentosLivres.getSize().width, (int) (frame.getSize().height * 0.4));
 		frame.getContentPane().add(assentosImage);
 		
-		JLabel assentos = new JLabel("Assentos"); //Gustavo - Imagem para ilustracao (ainda não exportei)
-		assentos.setBounds(112, 210, 61, 16);
+		JLabel assentos = new JLabel("Assentos"); 
+		assentos.setBounds(assentosImage.getBounds().x, (int) (assentosImage.getBounds().y + (assentosImage.getSize().height) + 26), 61, 26);
 		frame.getContentPane().add(assentos);
 		
 		assentosTextField = new JTextField();
-		assentosTextField.setBounds(185, 205, 130, 26);
+		assentosTextField.setBounds(assentos.getBounds().x + assentos.getSize().width + assentos.getSize().height, assentos.getBounds().y, 130, 26);
 		frame.getContentPane().add(assentosTextField);
 		assentosTextField.setColumns(10);
 		
 		JButton botaoCancelar = new JButton("Cancelar");
-		botaoCancelar.setBounds(6, 238, 117, 29);
+		botaoCancelar.setBounds((int) frame.getBounds().getMinX(), (int) frame.getBounds().getMaxY() - 58, 117, 29);
 		frame.getContentPane().add(botaoCancelar);
 		
-		JButton adicionarBotao = new JButton("Adicionar");
-		adicionarBotao.setBounds(327, 238, 117, 29);
-		frame.getContentPane().add(adicionarBotao);
+		JButton botaoAdicionar = new JButton("Adicionar");
+		botaoAdicionar.setBounds((int) frame.getBounds().getMaxX() - 117, (int) frame.getBounds().getMaxY() - 58, 117, 29);
+		frame.getContentPane().add(botaoAdicionar);
 		
 		this.cabecalho = new Cabecalho(this.frame);
 	}

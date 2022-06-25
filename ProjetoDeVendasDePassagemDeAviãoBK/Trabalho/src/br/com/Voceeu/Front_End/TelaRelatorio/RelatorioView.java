@@ -42,16 +42,16 @@ public class RelatorioView {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(0, 0, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton botaoVoltar = new JButton("Voltar");
-		botaoVoltar.setBounds(158, 237, 117, 29);
+		botaoVoltar.setBounds((int) (frame.getBounds().getCenterX() - 58.5), (int) (frame.getBounds().getMaxY() - 72.5), 117, 29);
 		frame.getContentPane().add(botaoVoltar);
 		
 		JList relatorioList = new JList(); //Gustavo - Lista para ver o relatorio do servidor
-		relatorioList.setBounds(16, 61, 428, 169);
+		relatorioList.setBounds(frame.getBounds().x + 25, (int) (frame.getBounds().y + ((frame.getSize().height - 200) * 0.25)), (frame.getSize().width - 50), (frame.getSize().height - 200));
 		frame.getContentPane().add(relatorioList);
 		
 		this.cabecalho = new Cabecalho(this.frame);

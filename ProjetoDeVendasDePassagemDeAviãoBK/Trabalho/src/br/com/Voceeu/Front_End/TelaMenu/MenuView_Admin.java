@@ -42,24 +42,24 @@ public class MenuView_Admin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(0, 0, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton botaoAdicionarVoo = new JButton("Adicionar Voo"); 
-		botaoAdicionarVoo.setBounds(159, 78, 117, 29);
+		botaoAdicionarVoo.setBounds((int) (frame.getSize().width * 0.5 - 58.5), (int) (frame.getSize().height * 0.125), 117, 29);
 		frame.getContentPane().add(botaoAdicionarVoo);
 		
 		JButton botaoServidor = new JButton("Servidor"); //Gustavo - Botão para acessar ao servidor
-		botaoServidor.setBounds(159, 113, 117, 29);
+		botaoServidor.setBounds(botaoAdicionarVoo.getBounds().x, (int) (botaoAdicionarVoo.getBounds().y + (botaoAdicionarVoo.getSize().height * 1.5)), 117, 29);
 		frame.getContentPane().add(botaoServidor);
 		
 		JButton botaoRelatorio = new JButton("Relatorio"); //Gustavo - Botão para acessar ao relatorio
-		botaoRelatorio.setBounds(159, 151, 117, 29);
+		botaoRelatorio.setBounds(botaoAdicionarVoo.getBounds().x, (int) (botaoServidor.getBounds().y + (botaoServidor.getSize().height * 1.5)), 117, 29);
 		frame.getContentPane().add(botaoRelatorio);
 		
-		JButton botaoVoltar = new JButton("Voltar"); 
-		botaoVoltar.setBounds(159, 237, 117, 29);
+		JButton botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds((int) (frame.getBounds().getCenterX() - 58.5), (int) (frame.getBounds().getMaxY() - 72.5), 117, 29);
 		frame.getContentPane().add(botaoVoltar);
 		
 		this.cabecalho = new Cabecalho(this.frame);

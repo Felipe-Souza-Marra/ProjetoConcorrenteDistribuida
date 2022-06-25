@@ -50,39 +50,43 @@ public class CadastroView {
 	 */
 	private void initialize() {
 		frmVoceEEu = new JFrame();
-		frmVoceEEu.setBounds(100, 100, 450, 300);
+		frmVoceEEu.setBounds(0, 0, 800, 600);
 		frmVoceEEu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmVoceEEu.getContentPane().setLayout(null);
 		
-		JLabel email = new JLabel("E-mail");
-		email.setBounds(125, 90, 42, 16);
-		frmVoceEEu.getContentPane().add(email);
-		
-		JLabel senha = new JLabel("Senha");
-		senha.setHorizontalAlignment(SwingConstants.CENTER);
-		senha.setBounds(125, 123, 37, 16);
-		frmVoceEEu.getContentPane().add(senha);
-		
 		emailTextField = new JTextField();
-		emailTextField.setBounds(187, 85, 130, 26);
+		emailTextField.setBounds((int) ((frmVoceEEu.getSize().width * 0.5) - ((frmVoceEEu.getSize().width * 0.25) * 0.5)), (int) (frmVoceEEu.getSize().height * 0.5) - 13, (int) (frmVoceEEu.getSize().width * 0.25), 26);
 		frmVoceEEu.getContentPane().add(emailTextField);
 		emailTextField.setColumns(10);
 		
+		JLabel email = new JLabel("E-mail");
+		email.setBounds((int) (emailTextField.getBounds().x - (emailTextField.getBounds().width * 0.3)), emailTextField.getBounds().y, 42, emailTextField.getSize().height);
+		frmVoceEEu.getContentPane().add(email);
+		
 		senhaTextField = new JTextField();
-		senhaTextField.setBounds(187, 118, 130, 26);
+		senhaTextField.setBounds(emailTextField.getBounds().x, emailTextField.getBounds().y + emailTextField.getBounds().height, emailTextField.getSize().width, emailTextField.getSize().height);
 		frmVoceEEu.getContentPane().add(senhaTextField);
 		senhaTextField.setColumns(10);
+		JLabel senha = new JLabel("Senha");
+		senha.setBounds((int) (senhaTextField.getBounds().x - (senhaTextField.getBounds().width * 0.3)), senhaTextField.getBounds().y, 37, senhaTextField.getSize().height);
+		frmVoceEEu.getContentPane().add(senha);
 		
 		JButton botaoCadastro = new JButton("OK");
 		botaoCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//TODO: Gustavo - Acao do botao
 			}
 		});
-		botaoCadastro.setBounds(187, 174, 75, 29);
+		botaoCadastro.setBounds((int) ((frmVoceEEu.getSize().width * 0.5) - 37.5), (int) (frmVoceEEu.getBounds().getSize().height * 0.75), 75, 29);
 		frmVoceEEu.getContentPane().add(botaoCadastro);
 		
 		JButton botaoSemLogin = new JButton("Continuar sem Login");
-		botaoSemLogin.setBounds(142, 209, 175, 29);
+		botaoSemLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//TODO: Gustavo - Acao do botao
+			}
+		});
+		botaoSemLogin.setBounds(312, botaoCadastro.getBounds().y + botaoCadastro.getBounds().height, 175, 29);
 		frmVoceEEu.getContentPane().add(botaoSemLogin);
 		
 		this.cabecalho = new Cabecalho(this.frmVoceEEu);

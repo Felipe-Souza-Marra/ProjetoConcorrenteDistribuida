@@ -42,20 +42,20 @@ public class MenuView_Usuario {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(0, 0, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton botaoVoos = new JButton("Voos"); //Gustavo - Botão para acessar aos voos do usuario
-		botaoVoos.setBounds(154, 77, 117, 29);
+		botaoVoos.setBounds((int) (frame.getSize().width * 0.5 - 58.5), (int) (frame.getSize().height * 0.125), 117, 29);
 		frame.getContentPane().add(botaoVoos);
 		
 		JButton botaoPassagem = new JButton("Passagem"); //Gustavo - Botão para acessar as passagens do usuario
-		botaoPassagem.setBounds(154, 118, 117, 29);
+		botaoPassagem.setBounds(botaoVoos.getBounds().x, (int) (botaoVoos.getBounds().y + (botaoVoos.getSize().height * 1.5)), 117, 29);
 		frame.getContentPane().add(botaoPassagem);
 		
 		JButton botaoVoltar = new JButton("Voltar");
-		botaoVoltar.setBounds(154, 237, 117, 29);
+		botaoVoltar.setBounds((int) (frame.getBounds().getCenterX() - 58.5), (int) (frame.getBounds().getMaxY() - 72.5), 117, 29);
 		frame.getContentPane().add(botaoVoltar);
 		
 		this.cabecalho = new Cabecalho(this.frame);

@@ -43,17 +43,17 @@ public class PassagensView_Admin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(0, 0, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JList passagensLista = new JList(); //Gustavo - Lista para vizulisar o relatorio de passagens
-		passagensLista.setBounds(16, 61, 428, 161);
-		frame.getContentPane().add(passagensLista);
-		
 		JButton botaoVoltar = new JButton("Voltar");
-		botaoVoltar.setBounds(161, 237, 117, 29);
+		botaoVoltar.setBounds((int) (frame.getBounds().getCenterX() - 58.5), (int) (frame.getBounds().getMaxY() - 72.5), 117, 29);
 		frame.getContentPane().add(botaoVoltar);
+		
+		JList passagensList = new JList(); //Gustavo - Lista para vizualisar as passagens do admin
+		passagensList.setBounds(frame.getBounds().x + 25, (int) (frame.getBounds().y + ((frame.getSize().height - 200) * 0.25)), (frame.getSize().width - 50), (frame.getSize().height - 200));
+		frame.getContentPane().add(passagensList);
 		
 		this.cabecalho = new Cabecalho(this.frame);
 	}

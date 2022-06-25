@@ -18,38 +18,39 @@ public class Cabecalho {
 	
 	public Cabecalho(JFrame frame) {
 		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(0, 0, 450, 55);
+		panel.setBounds(0, 0, frame.getSize().width, 55);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		JButton btnNewButton = new JButton("Voos");
-		btnNewButton.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		btnNewButton.setBackground(Color.LIGHT_GRAY);
-		btnNewButton.setBounds(62, 16, 43, 29);
-		btnNewButton.setBorder(null);
-		panel.add(btnNewButton);
 		
 		btnMinhasPassagens = new JButton("Minhas passagens");
 		btnMinhasPassagens.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnMinhasPassagens.setBorder(null);
 		btnMinhasPassagens.setBackground(Color.LIGHT_GRAY);
-		btnMinhasPassagens.setBounds(134, 16, 136, 29);
+		btnMinhasPassagens.setBounds((int) (panel.getSize().width * 0.5) - 68, panel.getBounds().y, 136, panel.getSize().height);
 		panel.add(btnMinhasPassagens);
 		
-		JLabel lblNewLabel = new JLabel("Usúario");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel.setBounds(315, 22, 61, 16);
-		panel.add(lblNewLabel);
-		
+		//IMAGEM USUARIO
 		Canvas canvas = new Canvas();
 		canvas.setBackground(Color.DARK_GRAY);
-		canvas.setBounds(400, 10, 40, 40);
+		canvas.setBounds(panel.getSize().width - 50, panel.getBounds().y, panel.getSize().height, panel.getSize().height);
 		panel.add(canvas);
 		
+		JLabel lblNewLabel = new JLabel("Usúario");
+		lblNewLabel.setBounds(canvas.getBounds().x - canvas.getSize().width, canvas.getBounds().y, 61, canvas.getSize().height);
+		panel.add(lblNewLabel);
+		
+		//LOGO
 		canvas_1 = new Canvas();
 		canvas_1.setBackground(Color.DARK_GRAY);
-		canvas_1.setBounds(10, 10, 40, 40);
+		canvas_1.setBounds(panel.getBounds().x, panel.getBounds().y, panel.getSize().height, panel.getSize().height);
 		panel.add(canvas_1);
+		
+		JButton btnNewButton = new JButton("Voos");
+		btnNewButton.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		btnNewButton.setBackground(Color.LIGHT_GRAY);
+		btnNewButton.setBounds(canvas_1.getBounds().x + canvas_1.getSize().width, canvas_1.getBounds().y, 43, canvas_1.getSize().height);
+		btnNewButton.setBorder(null);
+		panel.add(btnNewButton);
 	}
 	
 }
