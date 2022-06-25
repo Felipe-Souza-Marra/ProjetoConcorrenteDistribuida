@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import br.com.Voceeu.Back_End.CadastroPessoa.Passageiro;
-import br.com.Voceeu.Back_End.Pasagem.Pasagem;
+import br.com.Voceeu.Back_End.Passagem.Passagem;
 import br.com.Voceeu.Back_End.Servidor.Servidor;
 
 public class RelatorioVendas {
@@ -16,7 +16,7 @@ public class RelatorioVendas {
     public java.io.File CriaçãoArquivo(int data,int mes, Servidor nomeServidor){
         String nomeRelation = "Relatorio_venda_"+data+"_"+mes+"_"+nomeServidor.getNome()+".txt";//nome da do arquivo .txt ficando Relatorio_venda_15_05_Ser01.txt
         //coloca seu diretorio 
-        java.io.File diretorio = new java.io.File("C:\\Users\\admin\\Downloads\\ENE\\teste para o trabalho\\java\\Trabalho\\src\\br\\com\\Voceeu\\Back_End\\RelatorioVendas\\Relatorio");//indereço do arquivo onde ficara o relatorio
+        java.io.File diretorio = new java.io.File("C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\ProjetoConcorrenteDistribuida\\ProjetoDeVendasDePassagemDeAviãoBK\\Trabalho\\src\\br\\com\\Voceeu\\Back_End\\RelatorioVendas\\Relatorio");//indereço do arquivo onde ficara o relatorio
         java.io.File arquivo = new java.io.File(diretorio, nomeRelation);//usado para se cria o arquivo o diretorio e o nome do arquivo
         return arquivo;
     }
@@ -24,7 +24,9 @@ public class RelatorioVendas {
     public void escritaRelatorio(java.io.File arquivo, int TotalVoos, int totalVendas, Servidor nomeServidor, ArrayList<Passageiro> passageiros, float valorTotal){
         
         try {
+
             arquivo.createNewFile();//criação do arquivo
+            
             FileWriter fileWriter = new FileWriter(arquivo, false);//abrindo arquivo 
             PrintWriter printWriter = new PrintWriter(fileWriter);//abre o fluxo do arquivo
 
@@ -42,15 +44,15 @@ public class RelatorioVendas {
                 printWriter.println("++++++++++++++Hitorio Passagem++++++++++++++");
                 printWriter.println("//Nome do Passageiro: "+ passageiroPasagem.getNome());
                 printWriter.println("//CPF do Passageiro: "+ passageiroPasagem.getCpf());
-                printWriter.println("//Numero de passagem: " +passageiroPasagem.getPasagens().size());
+                printWriter.println("//Numero de passagem: " +passageiroPasagem.getPassagens().size());
                 printWriter.print("\n");
                 printWriter.println("++++++++++++++Pasagens++++++++++++++");
                 //validação caso nao tenha nhuma passagem
-                if(passageiroPasagem.getPasagens().size() == 0){
+                if(passageiroPasagem.getPassagens().size() == 0){
                     printWriter.println("Não a passagem");
 
                 }else{
-                    for (Pasagem pasagens : passageiroPasagem.getPasagens()) {
+                    for (Passagem pasagens : passageiroPasagem.getPassagens()) {
                         printWriter.println("------------------------------------");
                         printWriter.println("//Nome do Vou: "+ pasagens.getAviao().getNomeAviao());
                         printWriter.println("//Saida: "+ pasagens.getAviao().getSaida());
@@ -68,7 +70,7 @@ public class RelatorioVendas {
             }
             printWriter.flush();//fechamento do flush
             printWriter.close();//fechando arquivo
-            System.out.println("foi");
+            //System.out.println("foi");
         } catch (IOException e) {
             e.printStackTrace();
         }

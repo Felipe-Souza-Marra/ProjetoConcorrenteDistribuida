@@ -19,7 +19,7 @@
 //Data e hora do voou: 15/5
 //Horario: 18.0
 //Valor da pasagem: R$2000,00
-//Acento: E0
+//Acento: E1
 ------------------------------------
 //Nome do Vou: Bog003
 //Saida: Brasilha-DF

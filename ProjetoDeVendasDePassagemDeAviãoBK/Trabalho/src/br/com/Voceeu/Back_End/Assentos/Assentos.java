@@ -1,6 +1,6 @@
-package br.com.Voceeu.Back_End.Acentos;
+package br.com.Voceeu.Back_End.Assentos;
 
-public class Acentos {//calsse para o calsse Aviao noa ficar com muita coisa que ja tar
+public class Assentos {//calsse para o calsse Aviao noa ficar com muita coisa que ja tar
     private boolean vago = true;
     private String nomeAcentos;
 

@@ -2,20 +2,21 @@ package br.com.Voceeu.Back_End.CadastroPessoa;
 
 import java.util.ArrayList;
 
-import br.com.Voceeu.Back_End.Pasagem.Pasagem;
+import br.com.Voceeu.Back_End.Passagem.Passagem;
 
 public class Passageiro extends Pessoa{ //calsse filha da pessoa, essa classe cleinte onde ele so pode acessar o que o cliente precissa
-    private ArrayList<Pasagem> pasagens = new ArrayList<Pasagem>();
+    private ArrayList<Passagem> pasagens = new ArrayList<Passagem>();
+    private int matricula = 0;
 
-    public void addPasagem(Pasagem p){
+    public void addPasagem(Passagem p){
         this.pasagens.add(p);
     }
 
-    public void remuviPasagem(Pasagem p){
+    public void remuviPasagem(Passagem p){
         this.pasagens.remove(p);
     }
 
-    public ArrayList<Pasagem> getPasagens(){
+    public ArrayList<Passagem> getPassagens(){
         return this.pasagens;
     }
 

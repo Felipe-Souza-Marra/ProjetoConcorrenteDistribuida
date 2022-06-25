@@ -2,12 +2,12 @@ package br.com.Voceeu.Back_End.Main;
 
 import java.util.ArrayList;
 
-import br.com.Voceeu.Back_End.Acentos.Aviao;
+import br.com.Voceeu.Back_End.Assentos.Aviao;
 import br.com.Voceeu.Back_End.CadastroPessoa.Passageiro;
 import br.com.Voceeu.Back_End.CadastroPessoa.adim;
 import br.com.Voceeu.Back_End.Compra.DiaHorario;
 import br.com.Voceeu.Back_End.Compra.Valor;
-import br.com.Voceeu.Back_End.Pasagem.Pasagem;
+import br.com.Voceeu.Back_End.Passagem.Passagem;
 import br.com.Voceeu.Back_End.RelatorioVendas.RelatorioVendas;
 import br.com.Voceeu.Back_End.Servidor.Servidor;
 
@@ -56,10 +56,10 @@ public class Main {
 
         Valor valorTotal = new Valor();
         valorTotal.setValor(0);
-        Pasagem psg = new Pasagem(p1, aviaos.get(1), aviaos.get(1).ocuparAcento("E1"));
+        Passagem psg = new Passagem(p1, aviaos.get(1), aviaos.get(1).ocuparAcento("E1"));
         valorTotal.somaValores(valor.getValor());
         p1.addPasagem(psg);
-        Pasagem psg2 = new Pasagem(p1, aviaos.get(2), aviaos.get(2).ocuparAcento("D11"));
+        Passagem psg2 = new Passagem(p1, aviaos.get(2), aviaos.get(2).ocuparAcento("D11"));
         valorTotal.somaValores(valor.getValor());
         p1.addPasagem(psg2);
         passageiros.add(p1);

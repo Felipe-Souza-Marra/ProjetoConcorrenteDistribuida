@@ -1,4 +1,4 @@
-package br.com.Voceeu.Back_End.Acentos;
+package br.com.Voceeu.Back_End.Assentos;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ import br.com.Voceeu.Back_End.Compra.Valor;
 
 
 public class Aviao {
-    private ArrayList<Acentos> acentos = new ArrayList<Acentos>();
+    private ArrayList<Assentos> acentos = new ArrayList<Assentos>();
     private String nomeAviao;
     private DiaHorario data ;
     private Valor valor;
@@ -28,20 +28,20 @@ public class Aviao {
         //nomeção do acentos a adecionar ao avião 
         for(i=0; i < 20;i++){
             if(i <= 10){//os primeiro 10 acneto e da esqueda(E) os outos 10 e da diretita(D)
-                Acentos acentoE = new Acentos();
+                Assentos acentoE = new Assentos();
                 acentoE.setNomeAcentos("E"+ (i+1));
                 acentoE.setVago(true);
                 acentos.add(acentoE);
                 
             }else{
-                Acentos acentoD = new Acentos();
+                Assentos acentoD = new Assentos();
                 acentoD.setNomeAcentos("D"+ (i+1));
                 acentoD.setVago(true);
                 acentos.add(acentoD);
             }
             
         }
-        Acentos acentoN = new Acentos();
+        Assentos acentoN = new Assentos();
         acentoN.setNomeAcentos("NULO");
         acentos.add(acentoN);  
     }
@@ -71,9 +71,9 @@ public class Aviao {
     }
 
     //para oupar o acento e retonar o acento para a Casse Pasagem
-    public Acentos ocuparAcento(String nomeAcento){
-        Acentos selecionado = new Acentos();
-        for(Acentos as : acentos){
+    public Assentos ocuparAcento(String nomeAcento){
+        Assentos selecionado = new Assentos();
+        for(Assentos as : acentos){
             
             if(as.getNomeAcentos().compareTo(nomeAcento) == 0  && as.getVago() == false){
                 //acento ocupado
