@@ -1,26 +1,13 @@
 package br.com.Voceeu.Front_End.TelaAdicionarVoo;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.Box;
-import java.awt.geom.Ellipse2D;
-import java.awt.Color;
-import java.awt.Panel;
-import java.awt.Shape;
-import java.awt.Font;
-import javax.swing.SwingConstants;
-
+import java.awt.*;
+import javax.swing.*;
 import br.com.Voceeu.Components.Cabecalho;
 
-import java.awt.Canvas;
 
 public class AdicionarVooView {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTextField nomeVooTextField; //Gustavo - Área pra escrever o nome do voo
 	private JTextField partidaTextField; //Gustavo - Área pra escrever o local de partida 
 	private JTextField chegadaTextField; //Gustavo - Área pra escrever o local de chegada
@@ -100,5 +87,9 @@ public class AdicionarVooView {
 		frame.getContentPane().add(botaoAdicionar);
 		
 		this.cabecalho = new Cabecalho(this.frame);
+	}
+	
+	public JFrame returnFrame() {
+		return this.frame;
 	}
 }

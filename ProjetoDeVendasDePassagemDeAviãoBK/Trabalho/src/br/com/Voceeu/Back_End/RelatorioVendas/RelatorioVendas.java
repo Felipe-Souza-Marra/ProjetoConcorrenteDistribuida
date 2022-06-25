@@ -5,15 +5,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-
 import br.com.Voceeu.Back_End.CadastroPessoa.Passageiro;
 import br.com.Voceeu.Back_End.Passagem.Passagem;
-import br.com.Voceeu.Back_End.Servidor.Servidor;
+import br.com.Voceeu.Back_End.Servidor.ServidorLocal;
+
 
 public class RelatorioVendas {
     
     //dados nessesario para criar o arquivo do ralatorio
-    public java.io.File CriaçãoArquivo(int data,int mes, Servidor nomeServidor){
+    public java.io.File CriaçãoArquivo(int data,int mes, ServidorLocal nomeServidor){
         String nomeRelation = "Relatorio_venda_"+data+"_"+mes+"_"+nomeServidor.getNome()+".txt";//nome da do arquivo .txt ficando Relatorio_venda_15_05_Ser01.txt
         //coloca seu diretorio 
         java.io.File diretorio = new java.io.File("C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\ProjetoConcorrenteDistribuida\\ProjetoDeVendasDePassagemDeAviãoBK\\Trabalho\\src\\br\\com\\Voceeu\\Back_End\\RelatorioVendas\\Relatorio");//indereço do arquivo onde ficara o relatorio
@@ -21,7 +21,7 @@ public class RelatorioVendas {
         return arquivo;
     }
     //escriata do raltorio(se nao quiser meche nisso pois e grande deixa como o Mayco)
-    public void escritaRelatorio(java.io.File arquivo, int TotalVoos, int totalVendas, Servidor nomeServidor, ArrayList<Passageiro> passageiros, float valorTotal){
+    public void escritaRelatorio(java.io.File arquivo, int TotalVoos, int totalVendas, ServidorLocal nomeServidor, ArrayList<Passageiro> passageiros, float valorTotal){
         
         try {
 

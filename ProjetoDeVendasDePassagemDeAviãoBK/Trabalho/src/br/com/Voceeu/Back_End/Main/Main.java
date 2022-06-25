@@ -9,7 +9,7 @@ import br.com.Voceeu.Back_End.Compra.DiaHorario;
 import br.com.Voceeu.Back_End.Compra.Valor;
 import br.com.Voceeu.Back_End.Passagem.Passagem;
 import br.com.Voceeu.Back_End.RelatorioVendas.RelatorioVendas;
-import br.com.Voceeu.Back_End.Servidor.Servidor;
+import br.com.Voceeu.Back_End.Servidor.ServidorLocal;
 
 public class Main {
     public static void main(String[] args) throws Exception {//Mayco: nao sei se a meins vai ficar aqui mais caso nao fique nao tira ela daqui pode ser usada para testar
@@ -64,8 +64,7 @@ public class Main {
         p1.addPasagem(psg2);
         passageiros.add(p1);
 
-        Servidor s = new Servidor();
-        s.setNome("Ser001");
+        ServidorLocal s = new ServidorLocal();
         RelatorioVendas r = new RelatorioVendas();
 
         java.io.File  a = r.CriaçãoArquivo(30, 5, s);
