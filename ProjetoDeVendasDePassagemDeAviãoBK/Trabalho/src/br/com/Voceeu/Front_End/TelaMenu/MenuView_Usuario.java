@@ -4,11 +4,15 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import br.com.Voceeu.Components.Cabecalho;
+
 import javax.swing.JButton;
 
 public class MenuView_Usuario {
 
 	private JFrame frame;
+	private Cabecalho cabecalho;
 
 	/**
 	 * Launch the application.
@@ -42,10 +46,6 @@ public class MenuView_Usuario {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel logo = new JLabel("Logo");
-		logo.setBounds(6, 6, 43, 43);
-		frame.getContentPane().add(logo);
-		
 		JButton botaoVoos = new JButton("Voos"); //Gustavo - Botão para acessar aos voos do usuario
 		botaoVoos.setBounds(154, 77, 117, 29);
 		frame.getContentPane().add(botaoVoos);
@@ -57,6 +57,8 @@ public class MenuView_Usuario {
 		JButton botaoVoltar = new JButton("Voltar");
 		botaoVoltar.setBounds(154, 237, 117, 29);
 		frame.getContentPane().add(botaoVoltar);
+		
+		this.cabecalho = new Cabecalho(this.frame);
 	}
 
 }

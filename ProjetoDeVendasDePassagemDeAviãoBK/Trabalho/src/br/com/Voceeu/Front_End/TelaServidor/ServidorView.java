@@ -6,12 +6,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextField;
+
+import br.com.Voceeu.Components.Cabecalho;
+
 import javax.swing.JButton;
 
 public class ServidorView {
 
 	private JFrame frame;
 	private JTextField passagemTextField; //Gustavo - Area para pesquisar uma passagem
+	private Cabecalho cabecalho;
 
 	/**
 	 * Launch the application.
@@ -45,10 +49,6 @@ public class ServidorView {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel logo = new JLabel("Logo");
-		logo.setBounds(6, 6, 43, 43);
-		frame.getContentPane().add(logo);
-		
 		JList listaPassagens = new JList(); //Gustavo - Lista de passagens no servidor
 		listaPassagens.setBounds(17, 61, 427, 85);
 		frame.getContentPane().add(listaPassagens);
@@ -69,6 +69,8 @@ public class ServidorView {
 		JButton botaoContinuar = new JButton("Continuar");
 		botaoContinuar.setBounds(327, 237, 117, 29);
 		frame.getContentPane().add(botaoContinuar);
+		
+		this.cabecalho = new Cabecalho(this.frame);
 	}
 
 }

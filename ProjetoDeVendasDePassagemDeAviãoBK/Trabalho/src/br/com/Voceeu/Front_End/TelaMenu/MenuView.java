@@ -7,6 +7,9 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+
+import br.com.Voceeu.Components.Cabecalho;
+
 import javax.swing.JButton;
 
 public class MenuView {
@@ -14,6 +17,7 @@ public class MenuView {
 	private JFrame frame;
 	private JTable tabelaAssentosLivres; //Gustavo - Tabela de assentos livres
 	private JTextField assentosTextField; //Gustavo - Area pra pesquisar assentos livres
+	private Cabecalho cabecalho;
 
 	/**
 	 * Launch the application.
@@ -47,10 +51,6 @@ public class MenuView {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel logo = new JLabel("Logo"); //Gustavo - Logo para o cabecalho (ainda não exportei)
-		logo.setBounds(6, 6, 43, 43);
-		frame.getContentPane().add(logo);
-		
 		JList listaAssentosLivres = new JList(); //Gustavo - Lista para vizualisar os assentos livres
 		listaAssentosLivres.setBounds(112, 57, 227, 32);
 		frame.getContentPane().add(listaAssentosLivres);
@@ -79,5 +79,7 @@ public class MenuView {
 		JButton adicionarBotao = new JButton("Adicionar");
 		adicionarBotao.setBounds(327, 238, 117, 29);
 		frame.getContentPane().add(adicionarBotao);
+		
+		this.cabecalho = new Cabecalho(this.frame);
 	}
 }

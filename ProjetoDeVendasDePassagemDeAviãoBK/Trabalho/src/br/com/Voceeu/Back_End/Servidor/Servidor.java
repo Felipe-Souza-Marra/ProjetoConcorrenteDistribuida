@@ -1,7 +1,7 @@
 package br.com.Voceeu.Back_End.Servidor;
 
 public class Servidor {
-    private String nome;//nada por inguanto 
+    private String nome;
 
     public String getNome() {
         return nome;
