@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.*;
 import javax.swing.JFrame;
-
 import br.com.Voceeu.Back_End.Servidor.ServidorLocal;
 import br.com.Voceeu.Front_End.TelaAdicionarVoo.AdicionarVooView;
 
@@ -19,8 +18,6 @@ public class Main {
 	/**
 	 * Launch the application.
 	 */
-
-
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -34,7 +31,7 @@ public class Main {
 		});
 	}
 
-	/*
+	/**
 	 * Create the application.
 	 * @throws IOException 
 	 * @throws UnknownHostException 
@@ -62,7 +59,6 @@ public class Main {
 		
 		}
 	}
-	
 
 	/**
 	 * Initialize the contents of the frame.

@@ -1,9 +1,7 @@
 package br.com.Voceeu.Back_End.Main;
 
 import java.util.ArrayList;
-
 import br.com.Voceeu.Back_End.Assentos.Aviao;
-import br.com.Voceeu.Back_End.BD_cont.Bd_cont;
 import br.com.Voceeu.Back_End.CadastroPessoa.Passageiro;
 import br.com.Voceeu.Back_End.CadastroPessoa.adim;
 import br.com.Voceeu.Back_End.Compra.DiaHorario;
@@ -13,7 +11,7 @@ import br.com.Voceeu.Back_End.RelatorioVendas.RelatorioVendas;
 import br.com.Voceeu.Back_End.Servidor.ServidorLocal;
 
 public class Main {
-    public static void main(String[] args) {//Mayco: nao sei se a meins vai ficar aqui mais caso nao fique nao tira ela daqui pode ser usada para testar
+    public static void main(String[] args) throws Exception {//Mayco: nao sei se a meins vai ficar aqui mais caso nao fique nao tira ela daqui pode ser usada para testar
         // teste
         
         ArrayList<Aviao> aviaos = new ArrayList<Aviao>();
@@ -69,16 +67,9 @@ public class Main {
         RelatorioVendas r = new RelatorioVendas();
 
         java.io.File  a = r.CriaçãoArquivo(30, 5, s);
-        
-        Bd_cont bd = new Bd_cont();
-        bd.createConnection();
-
+    
         r.escritaRelatorio(a, aviaos.size(), 1, s , passageiros, valorTotal.getValor());
 
-
-        bd.closeConnection();
-
-        System.out.println("foi");
         
         
 
