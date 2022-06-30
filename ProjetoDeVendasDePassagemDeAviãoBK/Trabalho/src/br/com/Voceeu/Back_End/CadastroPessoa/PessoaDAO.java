@@ -59,7 +59,8 @@ public class PessoaDAO {
         
         }
         
-        return pessoas;   // Retorna a lista
+        return pessoas;  
+         // Retorna a lista
         
         }
 }
