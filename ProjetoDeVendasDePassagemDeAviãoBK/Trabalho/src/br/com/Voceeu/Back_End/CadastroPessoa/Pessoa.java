@@ -1,6 +1,7 @@
 package br.com.Voceeu.Back_End.CadastroPessoa;
 
 public class Pessoa {
+    private int id;
     private String nome;
     private String cpf;
     private String email;
@@ -8,6 +9,14 @@ public class Pessoa {
     private int nivelAcesso;//1.cleinte, 0.Adim
     
     
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
