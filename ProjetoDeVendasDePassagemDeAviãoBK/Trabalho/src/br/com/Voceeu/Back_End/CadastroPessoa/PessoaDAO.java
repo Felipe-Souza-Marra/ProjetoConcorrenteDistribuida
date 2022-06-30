@@ -39,7 +39,7 @@ public class PessoaDAO {
         
         Pessoa pes = new Pessoa();
         
-        pes.setIdPessoa(rs.getInt("idPessoa"));
+        pes.setId(rs.getInt("idPessoa"));
         
         pes.setNome(rs.getString("nome"));
 
@@ -48,6 +48,8 @@ public class PessoaDAO {
         pes.setEmail(rs.getString("email"));
 
         pes.setSenha(rs.getString("senha"));
+
+        pes.setNivelAcesso(rs.getInt("nivelAcesso"));
         
         pessoas.add(pes); // Adiciona o objeto na lista
         
