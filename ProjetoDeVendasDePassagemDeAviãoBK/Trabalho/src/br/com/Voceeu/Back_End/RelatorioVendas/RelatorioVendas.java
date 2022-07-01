@@ -16,7 +16,7 @@ public class RelatorioVendas {
     public java.io.File CriaçãoArquivo(int data,int mes, ServidorLocal nomeServidor){
         String nomeRelation = "Relatorio_venda_"+data+"_"+mes+"_"+nomeServidor.getNome()+".txt";//nome da do arquivo .txt ficando Relatorio_venda_15_05_Ser01.txt
         //coloca seu diretorio 
-        java.io.File diretorio = new java.io.File("C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\ProjetoConcorrenteDistribuida\\ProjetoDeVendasDePassagemDeAviãoBK\\Trabalho\\src\\br\\com\\Voceeu\\Back_End\\RelatorioVendas\\Relatorio");//indereço do arquivo onde ficara o relatorio
+        java.io.File diretorio = new java.io.File("/Users/arthurmartinssaraiva/Documents/GitHub/ProjetoConcorrenteDistribuida");//indereço do arquivo onde ficara o relatorio
         java.io.File arquivo = new java.io.File(diretorio, nomeRelation);//usado para se cria o arquivo o diretorio e o nome do arquivo
         return arquivo;
     }

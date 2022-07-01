@@ -69,14 +69,10 @@ public class Main {
         RelatorioVendas r = new RelatorioVendas();
 
         java.io.File  a = r.CriaçãoArquivo(30, 5, s);
-        
-        Bd_cont bd = new Bd_cont();
-        bd.createConnection();
+
 
         r.escritaRelatorio(a, aviaos.size(), 1, s , passageiros, valorTotal.getValor());
 
-
-        bd.closeConnection();
 
         System.out.println("foi");
         

@@ -3,17 +3,11 @@ package br.com.Voceeu.Front_End.TelaMenu;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import br.com.Voceeu.Components.Cabecalho;
-
 import javax.swing.JButton;
 
 public class MenuView_Usuario {
 
 	private JFrame frame;
-	private Cabecalho cabecalho;
-
 	/**
 	 * Launch the application.
 	 */
@@ -42,23 +36,24 @@ public class MenuView_Usuario {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 600, 600);
+		frame.setVisible(true);
+		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton botaoVoos = new JButton("Voos"); //Gustavo - Botão para acessar aos voos do usuario
-		botaoVoos.setBounds(154, 77, 117, 29);
+		JButton botaoVoos = new JButton("Comprar vôos");
+		botaoVoos.setBounds((int) (frame.getSize().getHeight() * 0.3), (int) (frame.getSize().getHeight() * 0.3), 250, 40);
 		frame.getContentPane().add(botaoVoos);
 		
-		JButton botaoPassagem = new JButton("Passagem"); //Gustavo - Botão para acessar as passagens do usuario
-		botaoPassagem.setBounds(154, 118, 117, 29);
+		JButton botaoPassagem = new JButton("Ver minhas passagem");
+		botaoPassagem.setBounds((int) (botaoVoos.getBounds().x), (int) (botaoVoos.getBounds().y + 40), 250, 40);
 		frame.getContentPane().add(botaoPassagem);
 		
-		JButton botaoVoltar = new JButton("Voltar");
-		botaoVoltar.setBounds(154, 237, 117, 29);
+		JButton botaoVoltar = new JButton("Deslogar");
+		botaoVoltar.setBounds((int) (botaoPassagem.getBounds().x), (int) (botaoPassagem.getBounds().y + 40), 250, 40);
 		frame.getContentPane().add(botaoVoltar);
 		
-		this.cabecalho = new Cabecalho(this.frame);
 	}
 
 }
