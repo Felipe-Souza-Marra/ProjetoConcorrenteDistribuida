@@ -82,5 +82,26 @@ public class RelatorioVendas {
         return null;
     }
 
+    public void ServidorACri(String nome, String texto){
+        String nomeArquivo = nome;//nome da do arquivo .txt ficando Relatorio_venda_15_05_Ser01.txt
+        //coloca seu diretorio 
+        java.io.File diretorio = new java.io.File("C:/Users/Usuario/OneDrive/Documentos/GitHub/ProjetoConcorrenteDistribuida/ProjetoDeVendasDePassagemDeAviãoBK/Trabalho/src/br/com/Voceeu/Back_End/RelatorioVendas/Relatorio");//indereço do arquivo onde ficara o relatorio
+        java.io.File arquivo = new java.io.File(diretorio, nomeArquivo);//usado para se cria o arquivo o diretorio e o nome do arquivo
+
+
+        try {
+            arquivo.createNewFile();//criação do arquivo
+
+            FileWriter fileWriter = new FileWriter(arquivo, false);//abrindo arquivo 
+            PrintWriter printWriter = new PrintWriter(fileWriter);//abre o fluxo do arquivo
+            printWriter.println(texto);// ecreve
+            printWriter.flush();//fechamento do flush
+            printWriter.close();//fechando arquivo
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

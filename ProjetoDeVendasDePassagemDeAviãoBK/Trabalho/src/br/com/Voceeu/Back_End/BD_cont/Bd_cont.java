@@ -5,35 +5,34 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Bd_cont {
-    private final String driverName = "com.mysql.jdbc.Driver";
-    private final String connectionUrl = "jdbc:mysql://localhost:3306/bd_geral1";
-    private final String userName = "root";
-    private final String userPass = "teste";
 
-    private Connection con = null;
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
-    public Bd_cont() {
-        try {
-            Class.forName(driverName);
-        } catch (ClassNotFoundException e) {
-            System.out.println(e.toString());
-        }
+    private static final String URL = "jdbc:mysql://localhost:3306/bd_geral1";
+    
+    private static final String USER = "root";
+    
+    private static final String PASSWORD = "teste";
+    
+    public static Connection getConnection() throws SQLException, ClassNotFoundException {
+    
+    try{
+    
+     // O método forName carrega e inicia o driver passado por parâmetro
+    
+    Class.forName(DRIVER);
+    
+     // Estabelecendo a conexão
+    
+    return DriverManager.getConnection(URL, USER, PASSWORD);
+    
+    }catch(ClassNotFoundException | SQLException ex){ // Tratamento de Exceções
+    
+    System.out.println(ex);
+    
+    return null;
+    
     }
-
-    public Connection createConnection() {//criar conquisao
-        try {
-            con = DriverManager.getConnection(connectionUrl, userName, userPass);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return con;
-    }
-
-    public void closeConnection() {//sair
-        try {
-            this.con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    
     }
 }
