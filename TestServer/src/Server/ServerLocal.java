@@ -1,28 +1,29 @@
-package br.com.Voceeu.Back_End.Servidor;
+package Server;
 
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.List;
+import Client.ClientHandler;
 
-public class ServidorLocal {
+public class ServerLocal {
 
 	private String nome;
 	static public int port = 1090;
 	private ServerSocket serverSocket;
-	private List<ClienteThread> clientes;
+	private List<ClientHandler> clientes;
 
 
-	public ServidorLocal() {
+	public ServerLocal() {
 
 		this.nome = "Servidor1";
-		this.clientes = new ArrayList<ClienteThread>();
+		this.clientes = new ArrayList<ClientHandler>();
 
 	}
 
 	public void criarServerSocket() throws IOException {
 
-		this.serverSocket = new ServerSocket(ServidorLocal.port);
+		this.serverSocket = new ServerSocket(ServerLocal.port);
 
 	}
 	
@@ -45,7 +46,7 @@ public class ServidorLocal {
 			DataOutputStream dout = new DataOutputStream(socketOut);
 			InputStream socketIn =  clientSocket.getInputStream();
 			DataInputStream din = new DataInputStream(socketIn);
-			ClienteThread cliente = new ClienteThread(clientSocket);
+			ClientHandler cliente = new ClientHandler(clientSocket, din, dout);
 			cliente.start();
 			this.clientes.add(cliente);
 			
@@ -61,9 +62,8 @@ public class ServidorLocal {
 		return nome;
 	}
 
-	public List<ClienteThread> getClientes() {
+	public List<ClientHandler> getClientes() {
 		return clientes;
 	}
 
 }
-

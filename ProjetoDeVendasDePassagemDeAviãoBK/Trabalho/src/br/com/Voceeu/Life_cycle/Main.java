@@ -14,7 +14,6 @@ import br.com.Voceeu.Front_End.TelaAdicionarVoo.AdicionarVooView;
 public class Main {
 
 	private JFrame frame;
-
 	/**
 	 * Launch the application.
 	 */
@@ -38,34 +37,36 @@ public class Main {
 	 */
 	public Main() throws Exception {
 		try (Socket socket = new Socket("localhost", ServidorLocal.port)) {
+			System.out.println("Cliente: conectado ao servidor");
+			DataInputStream din;
+			DataOutputStream dout;
+			String value;
+			din = new DataInputStream(socket.getInputStream());
+			value = din.readUTF();
+			System.out.println(value);
+			System.out.println("Cliente: recebe");
 			
-		System.out.println("Cliente: conectado ao servidor");
-		
-		int valor = 5;
-		
-		OutputStream socketOut =  socket.getOutputStream();
-		DataOutputStream dout = new DataOutputStream(socketOut);
-		System.out.println("Cliente: valor enviado " + valor);
-		dout.writeInt(valor);
-		InputStream socketIn = socket.getInputStream();
-		DataInputStream din = new DataInputStream(socketIn);
-		
-		int valorIncrementado = din.readInt();
-		System.out.println("Cliente: valor enviado " + valor);
-		System.out.println(valorIncrementado);
-		System.out.println("Cliente: valor recebido " + valorIncrementado);
-		
-		initialize();
-		
+			dout = new DataOutputStream(socket.getOutputStream());
+			dout.writeUTF(value);
+			System.out.println("Cliente: manda");
+			System.out.println(value);
+			
+			value = din.readUTF();
+			System.out.println(value);
+			System.out.println("Cliente: recebe");
+			
+			
+			initialize();
+			frame = new AdicionarVooView().frame;
 		}
+
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new AdicionarVooView().frame;
-		
+
 	}
 
 }
